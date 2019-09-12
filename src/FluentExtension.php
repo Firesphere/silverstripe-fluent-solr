@@ -30,10 +30,7 @@ class FluentExtension extends Extension
      */
     public function onBeforeInit()
     {
-        if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
-            return;
-        }
-        $locales = Locale::get()->exclude(['IsGlobalDefault' => true]);
+        $locales = Locale::get();
         SiteState::addStates($locales->column('Locale'));
     }
 
@@ -42,10 +39,7 @@ class FluentExtension extends Extension
      */
     public function onAfterInit(): void
     {
-        if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
-            return;
-        }
-        $locales = Locale::get()->exclude(['IsGlobalDefault' => true]);
+        $locales = Locale::get();
         /** @var BaseIndex $owner */
         $owner = $this->owner;
         $copyFields = $owner->getCopyFields();
@@ -65,10 +59,7 @@ class FluentExtension extends Extension
      */
     public function onAfterFieldDefinition($data, $item): void
     {
-        if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
-            return;
-        }
-        $locales = Locale::get()->exclude(['IsGlobalDefault' => true]);
+        $locales = Locale::get();
 
         foreach ($locales as $locale) {
             $isDest = strpos($item['Destination'], $locale->Locale);
@@ -88,16 +79,9 @@ class FluentExtension extends Extension
      */
     public function onBeforeAddDoc(&$field, &$value): void
     {
-        if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
-            return;
-        }
         $fluentState = FluentState::singleton();
         $locale = $fluentState->getLocale();
-        /** @var Locale $defaultLocale */
-        $defaultLocale = Locale::get()->filter(['IsGlobalDefault' => true])->first();
-        if ($locale !== null && $locale !== $defaultLocale->Locale) {
-            $field['name'] .= '_' . $locale;
-        }
+        $field['name'] .= '_' . $locale;
     }
 
     /**
@@ -108,14 +92,8 @@ class FluentExtension extends Extension
      */
     public function onBeforeSearch($query, $clientQuery): void
     {
-        if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
-            return;
-        }
         $locale = FluentState::singleton()->getLocale();
-        $defaultLocale = Locale::get()->filter(['IsGlobalDefault' => true])->first();
-        if ($locale && $defaultLocale !== null && $locale !== $defaultLocale->Locale) {
-            $defaultField = $clientQuery->getQueryDefaultField() ?: '_text';
-            $clientQuery->setQueryDefaultField($locale . $defaultField);
-        }
+        $defaultField = $clientQuery->getQueryDefaultField() ?: '_text';
+        $clientQuery->setQueryDefaultField($locale . $defaultField);
     }
 }

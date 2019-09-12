@@ -46,14 +46,12 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     /**
      * Reset the SiteState to it's default state
      *
+     * @param string|null $state
      * @return mixed
      */
-    public function setDefaultState()
+    public function setDefaultState($state = null)
     {
-        /** @var Locale $default */
-        $default = Locale::get()->filter(['IsGlobalDefault' => true])->first();
-
-        FluentState::singleton()->activateState($default->Locale);
+        FluentState::singleton()->setLocale($state);
     }
 
     /**
@@ -74,6 +72,6 @@ class FluentSiteState extends SiteState implements SiteStateInterface
      */
     public function activateState($state)
     {
-        FluentState::singleton()->activateState($state);
+        FluentState::singleton()->setLocale($state);
     }
 }
