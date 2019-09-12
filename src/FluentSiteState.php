@@ -3,6 +3,7 @@
 namespace Firesphere\SolrSearch\Fluent;
 
 use Firesphere\SolrSearch\Interfaces\SiteStateInterface;
+use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSearch\States\SiteState;
 use ReflectionException;
 use TractorCow\Fluent\Extension\FluentExtension;
@@ -73,5 +74,51 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     public function activateState($state)
     {
         FluentState::singleton()->setLocale($state);
+    }
+
+    /**
+     * @param BaseQuery $query
+     */
+    public function updateQuery(&$query)
+    {
+        $locale = FluentState::singleton()->getLocale();
+
+        $this->updatePart($query, $locale, 'BoostedFields');
+        $this->updatePart($query, $locale, 'Filter');
+        $this->updatePart($query, $locale, 'Exclude');
+
+        $fields = [];
+        foreach ($query->getFields() as $field) {
+            $fields[] = $field . '_' . $locale;
+        }
+        $query->setFields($fields);
+
+        $localisedTerms = [];
+        foreach ($query->getTerms() as $term) {
+            if (count($term['fields'])) {
+                foreach ($term['fields'] as &$termField) {
+                    $termField .= '_' . $locale;
+                }
+            }
+            $localisedTerms[] = $term;
+        }
+        $query->setTerms($localisedTerms);
+    }
+
+    /**
+     * @param $query
+     * @param string $locale
+     * @param string $method
+     */
+    protected function updatePart(&$query, string $locale, string $method): void
+    {
+        $new = [];
+        $getMethod = 'get' . $method;
+        $setMethod = 'set' . $method;
+        foreach ($query->$getMethod() as $filterField => $value) {
+            $fieldName = $filterField . '_' . $locale;
+            $new[$fieldName] = $value;
+        }
+        $query->$setMethod($new);
     }
 }
