@@ -77,6 +77,8 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     }
 
     /**
+     * Update the Solr query to match the current State
+     *
      * @param BaseQuery $query
      */
     public function updateQuery(&$query)
@@ -106,6 +108,8 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     }
 
     /**
+     * Update a part of the query for the get and set methods.
+     *
      * @param $query
      * @param string $locale
      * @param string $method
