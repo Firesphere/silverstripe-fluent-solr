@@ -27,7 +27,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     public function appliesTo($class): bool
     {
         return $this->isEnabled() &&
-            SiteState::hasExtension($class, FluentExtension::class, true) &&
+            SiteState::hasExtension($class, FluentExtension::class) &&
             Locale::getCached()->count();
     }
 
@@ -101,6 +101,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
                 foreach ($term['fields'] as &$termField) {
                     $termField .= '_' . $locale;
                 }
+                unset($termField);
             }
             $localisedTerms[] = $term;
         }
