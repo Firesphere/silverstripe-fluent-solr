@@ -63,7 +63,7 @@ class FluentExtension extends Extension
 
         foreach ($locales as $locale) {
             $isDest = strpos($item['Destination'], $locale->Locale);
-            if ($isDest === 0 || $item['Destination'] === null) {
+            if (($isDest === 0 || $item['Destination'] === null) && $locale->Locale !== null) {
                 $copy = $item;
                 $copy['Field'] = $item['Field'] . '_' . $locale->Locale;
                 $data->push($copy);
@@ -81,7 +81,9 @@ class FluentExtension extends Extension
     {
         $fluentState = FluentState::singleton();
         $locale = $fluentState->getLocale();
-        $field['name'] .= '_' . $locale;
+        if ($locale) {
+            $field['name'] .= '_' . $locale;
+        }
     }
 
     /**

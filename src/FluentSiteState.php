@@ -41,7 +41,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     {
         $locales = Locale::get()->column('Locale');
 
-        return in_array($state, $locales, true);
+        return in_array($state, $locales, true) && count($locales);
     }
 
     /**
@@ -84,6 +84,9 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     public function updateQuery(&$query)
     {
         $locale = FluentState::singleton()->getLocale();
+        if ($locale === '') {
+            return;
+        }
 
         $this->updatePart($query, $locale, 'BoostedFields');
         $this->updatePart($query, $locale, 'Filter');
@@ -117,6 +120,9 @@ class FluentSiteState extends SiteState implements SiteStateInterface
      */
     protected function updatePart(&$query, string $locale, string $method): void
     {
+        if (!$locale) {
+            return;
+        }
         $new = [];
         $getMethod = 'get' . $method;
         $setMethod = 'set' . $method;
