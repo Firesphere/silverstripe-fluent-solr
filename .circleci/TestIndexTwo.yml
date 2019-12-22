@@ -1,0 +1,29 @@
+Firesphere\SolrSearch\Indexes\BaseIndex:
+  TestIndexTwo:
+    Classes:
+      - SilverStripe\CMS\Model\SiteTree
+    FulltextFields:
+      - Content
+      - TestObject.Title
+      - TestObject.TestRelation.Title
+    SortFields: []
+    FilterFields:
+      - Title
+      - Created
+      - Firesphere\SolrSearch\Tests\TestObject
+    BoostedFields: []
+    CopyFields:
+      _text:
+        - '*'
+    DefaultField: _text
+    FacetFields:
+      Firesphere\SolrSearch\Tests\TestObject:
+        BaseClass: SilverStripe\CMS\Model\SiteTree
+        Field: ID
+        Title: TestObject
+Firesphere\SolrSearch\Services\SolrCoreService:
+  indexes:
+    - CircleCITestIndex
+    - Firesphere\SolrSearch\Tests\TestIndex
+    - Firesphere\SolrSearch\Tests\TestIndexTwo
+    - Firesphere\SolrSearch\Tests\TestIndexThree
