@@ -9,8 +9,6 @@
 
 # Solr Search fulltextsearch compatibility module
 
-This module provides some stubs to make migrating from the FulltextSearch module easier.
-
 [See the documentation](https://firesphere.github.io/solr-docs/11-Submodules/03-Fluent.html)
 
 ## Installation
