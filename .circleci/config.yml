@@ -5,6 +5,8 @@
 version: 2
 jobs:
   solr8:
+    environment:
+      CC_TEST_REPORTER_ID: bf698d81c6ae36b59e5d80d3e5dc3a9f3b57a88c630071f6a666623ceed6f822
     docker:
       - image: ssmarco/php-solr:latest
         environment:
@@ -111,9 +113,9 @@ jobs:
             echo "---"
             bash <(curl -s https://codecov.io/bash) -f clover.xml
             echo "---"
-#            echo "CodeClimate:"
-#            echo "---"
-#            ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
+            echo "CodeClimate:"
+            echo "---"
+            ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
       - run:
           name: Code Sniffer
           command: vendor/bin/phpcs --standard=phpcs.xml.dist src
