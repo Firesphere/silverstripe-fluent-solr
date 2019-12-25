@@ -102,13 +102,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
 
         $localisedTerms = [];
         foreach ($query->getTerms() as $term) {
-            if (count($term['fields'])) {
-                foreach ($term['fields'] as &$termField) {
-                    $termField .= '_' . $locale;
-                }
-                unset($termField);
-            }
-            $localisedTerms[] = $term;
+            $localisedTerms = $this->updateTerms($term, $locale, $localisedTerms);
         }
         $query->setTerms($localisedTerms);
     }
@@ -133,5 +127,26 @@ class FluentSiteState extends SiteState implements SiteStateInterface
             $new[$fieldName] = $value;
         }
         $query->$setMethod($new);
+    }
+
+    /**
+     * Update the field filters to localised filters
+     *
+     * @param $term
+     * @param string $locale
+     * @param array $localisedTerms
+     * @return array
+     */
+    private function updateTerms($term, string $locale, array $localisedTerms): array
+    {
+        if (count($term['fields'])) {
+            foreach ($term['fields'] as &$termField) {
+                $termField .= '_' . $locale;
+            }
+            unset($termField);
+        }
+        $localisedTerms[] = $term;
+
+        return $localisedTerms;
     }
 }
