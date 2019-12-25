@@ -1,6 +1,6 @@
 <?php
 
-namespace Firesphere\SolrSearch\Fluent;
+namespace Firesphere\SolrFluent;
 
 use Firesphere\SolrSearch\Interfaces\SiteStateInterface;
 use Firesphere\SolrSearch\Queries\BaseQuery;
@@ -13,7 +13,7 @@ use TractorCow\Fluent\State\FluentState;
 /**
  * Class FluentSiteState
  *
- * @package Firesphere\SolrSearch\Fluent
+ * @package Firesphere\SolrFluent
  */
 class FluentSiteState extends SiteState implements SiteStateInterface
 {

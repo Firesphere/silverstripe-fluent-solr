@@ -1,6 +1,6 @@
 <?php
 
-namespace Firesphere\SolrSearch\Fluent;
+namespace Firesphere\SolrFluent;
 
 use Firesphere\SolrSearch\Factories\DocumentFactory;
 use Firesphere\SolrSearch\Indexes\BaseIndex;
