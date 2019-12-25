@@ -62,7 +62,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
      *
      * @return string|null
      */
-    public function currentState(): ?string
+    public function currentState()
     {
         return FluentState::singleton()->getLocale();
     }
