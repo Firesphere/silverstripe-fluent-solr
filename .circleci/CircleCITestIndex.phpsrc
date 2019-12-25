@@ -1,8 +1,8 @@
 <?php
-use SilverStripe\FullTextSearch\Solr\SolrIndex;
+use Firesphere\SolrSearch\Indexes\BaseIndex;
 use SilverStripe\CMS\Model\SiteTree;
 
-class CircleCITestIndex extends SolrIndex
+class CircleCITestIndex extends BaseIndex
 {
     public function init(): void
     {
