@@ -11,6 +11,7 @@ use TractorCow\Fluent\State\FluentState;
  * Class Firesphere\SolrFluent\Extensions\FluentDocumentExtension
  *
  * Update Documents per locale
+ *
  * @package Firesphere\SolrFluent\Extensions
  * @property DocumentFactory|FluentDocumentExtension $owner
  */
@@ -30,5 +31,4 @@ class FluentDocumentExtension extends DataExtension
             $field['name'] .= '_' . $locale;
         }
     }
-
 }

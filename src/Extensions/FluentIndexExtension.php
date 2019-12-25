@@ -2,10 +2,8 @@
 
 namespace Firesphere\SolrFluent\Extensions;
 
-use Firesphere\SolrSearch\Factories\DocumentFactory;
 use Firesphere\SolrSearch\Indexes\BaseIndex;
 use Firesphere\SolrSearch\Queries\BaseQuery;
-use Firesphere\SolrSearch\Services\SchemaService;
 use Firesphere\SolrSearch\States\SiteState;
 use SilverStripe\Core\Extension;
 use Solarium\QueryType\Select\Query\Query;

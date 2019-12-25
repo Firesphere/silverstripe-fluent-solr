@@ -3,7 +3,6 @@
 
 namespace Firesphere\SolrFluent\Extensions;
 
-
 use Firesphere\SolrSearch\Services\SchemaService;
 use SilverStripe\Core\Extension;
 use SilverStripe\ORM\ArrayList;
@@ -12,7 +11,10 @@ use SilverStripe\ORM\DataObject;
 use TractorCow\Fluent\Model\Locale;
 
 /**
- * Class FluentSchemaExtension
+ * Class \Firesphere\SolrFluent\Extensions\FluentSchemaExtension
+ *
+ * Update the schema with the appropriate locale fields
+ *
  * @package Firesphere\SolrFluent\Extensions
  * @property SchemaService|FluentSchemaExtension $owner
  */

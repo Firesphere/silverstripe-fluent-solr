@@ -11,7 +11,9 @@ use TractorCow\Fluent\Model\Locale;
 use TractorCow\Fluent\State\FluentState;
 
 /**
- * Class FluentSiteState
+ * Class \Firesphere\SolrFluent\States\FluentSiteState
+ *
+ * Manage the state of the site to apply the correct locale from Fluent to search
  *
  * @package Firesphere\SolrFluent\States
  */
