@@ -3,8 +3,8 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Firesphere/silverstripe-fluent-solr/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Firesphere/silverstripe-fluent-solr/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/Firesphere/silverstripe-fluent-solr/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Firesphere/silverstripe-fluent-solr/build-status/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/Firesphere/silverstripe-fluent-solr/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Firesphere/silverstripe-fluent-solr/?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/347f69eaa3082ba6f227/maintainability)](https://codeclimate.com/github/Firesphere/silverstripe-fluent-solr/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/347f69eaa3082ba6f227/test_coverage)](https://codeclimate.com/github/Firesphere/silverstripe-fluent-solr/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c18290bceb65bd38651e/maintainability)](https://codeclimate.com/github/Firesphere/silverstripe-fluent-solr/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/c18290bceb65bd38651e/test_coverage)](https://codeclimate.com/github/Firesphere/silverstripe-fluent-solr/test_coverage)
 [![Support us](https://enjoy.gitstore.app/repositories/badge-Firesphere/silverstripe-solr-search.svg)](https://enjoy.gitstore.app/repositories/Firesphere/silverstripe-solr-search)
 
 # Solr Search fulltextsearch compatibility module
