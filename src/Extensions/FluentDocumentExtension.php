@@ -4,7 +4,7 @@
 namespace Firesphere\SolrFluent\Extensions;
 
 use Firesphere\SolrSearch\Factories\DocumentFactory;
-use SilverStripe\ORM\DataExtension;
+use SilverStripe\Core\Extension;
 use TractorCow\Fluent\State\FluentState;
 
 /**
@@ -15,7 +15,7 @@ use TractorCow\Fluent\State\FluentState;
  * @package Firesphere\SolrFluent\Extensions
  * @property DocumentFactory|FluentDocumentExtension $owner
  */
-class FluentDocumentExtension extends DataExtension
+class FluentDocumentExtension extends Extension
 {
     /**
      * Update the Solr field for the value to use the locale name
