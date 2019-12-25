@@ -11,4 +11,9 @@ class CircleCITestIndex extends BaseIndex
         $this->addFulltextField('Content');
         parent::init();
     }
+
+    public function getIndexName()
+    {
+        return 'CircleCITestIndex';
+    }
 }
