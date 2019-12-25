@@ -13,7 +13,7 @@ use TractorCow\Fluent\State\FluentState;
 /**
  * Class FluentSiteState
  *
- * @package Firesphere\SolrFluent
+ * @package Firesphere\SolrFluent\States
  */
 class FluentSiteState extends SiteState implements SiteStateInterface
 {

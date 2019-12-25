@@ -8,22 +8,18 @@ use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSearch\Services\SchemaService;
 use Firesphere\SolrSearch\States\SiteState;
 use SilverStripe\Core\Extension;
-use SilverStripe\ORM\ArrayList;
-use SilverStripe\ORM\DataList;
-use SilverStripe\ORM\DataObject;
 use Solarium\QueryType\Select\Query\Query;
 use TractorCow\Fluent\Model\Locale;
 use TractorCow\Fluent\State\FluentState;
 
 /**
- * Support for Fluent translations.
+ * Support for Fluent translations in the index.
  *
- * This class should be moved to a separate repo or to Fluent, but provides the basic Fluent support for now
  *
- * @package Firesphere\SolrSearch\Compat
- * @property DocumentFactory|BaseIndex|SchemaService|FluentExtension $owner
+ * @package Firesphere\SolrFluent\Extensions
+ * @property BaseIndex|FluentIndexExtension $owner
  */
-class FluentExtension extends Extension
+class FluentIndexExtension extends Extension
 {
     /**
      * Add the fluent states
@@ -48,41 +44,6 @@ class FluentExtension extends Extension
             foreach ($copyFields as $copyField => $values) {
                 $owner->addCopyField($locale->Locale . $copyField, $values);
             }
-        }
-    }
-
-    /**
-     * Add the locale fields
-     *
-     * @param ArrayList|DataList $data
-     * @param DataObject $item
-     */
-    public function onAfterFieldDefinition($data, $item): void
-    {
-        $locales = Locale::get();
-
-        foreach ($locales as $locale) {
-            $isDest = strpos($item['Destination'], $locale->Locale);
-            if (($isDest === 0 || $item['Destination'] === null) && $locale->Locale !== null) {
-                $copy = $item;
-                $copy['Field'] = $item['Field'] . '_' . $locale->Locale;
-                $data->push($copy);
-            }
-        }
-    }
-
-    /**
-     * Update the Solr field for the value to use the locale name
-     *
-     * @param array $field
-     * @param string $value
-     */
-    public function onBeforeAddDoc(&$field, &$value): void
-    {
-        $fluentState = FluentState::singleton();
-        $locale = $fluentState->getLocale();
-        if ($locale) {
-            $field['name'] .= '_' . $locale;
         }
     }
 
