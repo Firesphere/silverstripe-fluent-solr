@@ -1,6 +1,6 @@
 <?php
 
-namespace Firesphere\SolrFluent;
+namespace Firesphere\SolrFluent\States;
 
 use Firesphere\SolrSearch\Interfaces\SiteStateInterface;
 use Firesphere\SolrSearch\Queries\BaseQuery;
