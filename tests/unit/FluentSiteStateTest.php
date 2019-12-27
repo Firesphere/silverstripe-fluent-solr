@@ -15,4 +15,27 @@ class FluentSiteStateTest extends SapphireTest
 
         $this->assertFalse($state->appliesTo(SiteTree::class));
     }
+
+    public function testIsApplicable()
+    {
+        $state = new FluentSiteState();
+
+        $this->assertFalse($state->stateIsApplicable('en_US'));
+    }
+
+    public function testCurrentState()
+    {
+        $state = new FluentSiteState();
+
+        $this->assertNull($state->activateState('en_US'));
+
+        $this->assertEquals('en_US', $state->currentState());
+    }
+
+    public function testDefaultState()
+    {
+        $state = new FluentSiteState();
+
+        $this->assertNull($state->setDefaultState('en_US'));
+    }
 }
