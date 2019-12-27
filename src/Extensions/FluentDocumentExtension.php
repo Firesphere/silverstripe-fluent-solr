@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * Class FluentDocumentExtension|Firesphere\SolrFluent\Extensions\FluentDocumentExtension Add Fluent filtering
+ * to queries
+ *
+ * @package Firesphere\SolrFluent\Extensions
+ * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
+ * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
+ */
 
 namespace Firesphere\SolrFluent\Extensions;
 

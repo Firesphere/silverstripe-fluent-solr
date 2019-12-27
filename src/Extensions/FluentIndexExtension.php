@@ -1,4 +1,11 @@
 <?php
+/**
+ * Class FluentIndexExtension|Firesphere\SolrFluent\Extensions\FluentIndexExtension Add Fluent locales to the index
+ *
+ * @package Firesphere\SolrFluent\Extensions
+ * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
+ * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
+ */
 
 namespace Firesphere\SolrFluent\Extensions;
 

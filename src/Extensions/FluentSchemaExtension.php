@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * Class FluentSchemaExtension|Firesphere\SolrFluent\Extensions\FluentSchemaExtension Add Fluent schema requirements
+ *
+ * @package Firesphere\SolrFluent\Extensions
+ * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
+ * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
+ */
 
 namespace Firesphere\SolrFluent\Extensions;
 

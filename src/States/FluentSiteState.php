@@ -1,4 +1,12 @@
 <?php
+/**
+ * Class FluentSiteState|Firesphere\SolrFluent\States\FluentSiteState Set the site state for each indexing group for
+ * Fluent translations
+ *
+ * @package Firesphere\SolrFluent\States
+ * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
+ * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
+ */
 
 namespace Firesphere\SolrFluent\States;
 
