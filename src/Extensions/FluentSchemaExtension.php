@@ -9,7 +9,7 @@
 
 namespace Firesphere\SolrFluent\Extensions;
 
-use Firesphere\SolrSearch\Services\SchemaService;
+use Firesphere\SolrSearch\Factories\SchemaFactory;
 use SilverStripe\Core\Extension;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataList;
@@ -22,7 +22,7 @@ use TractorCow\Fluent\Model\Locale;
  * Update the schema with the appropriate locale fields
  *
  * @package Firesphere\SolrFluent\Extensions
- * @property SchemaService|FluentSchemaExtension $owner
+ * @property SchemaFactory|FluentSchemaExtension $owner
  */
 class FluentSchemaExtension extends Extension
 {

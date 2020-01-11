@@ -1,7 +1,7 @@
 Firesphere\SolrSearch\Indexes\BaseIndex:
   extensions:
     - Firesphere\SolrFluent\Extensions\FluentIndexExtension # Fluent compatibility
-Firesphere\SolrSearch\Services\SchemaService:
+Firesphere\SolrSearch\Factories\SchemaFactory:
   extensions:
     - Firesphere\SolrFluent\Extensions\FluentSchemaExtension
 Firesphere\SolrSearch\Factories\DocumentFactory:
