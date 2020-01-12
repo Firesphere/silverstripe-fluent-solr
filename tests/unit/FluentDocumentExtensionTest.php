@@ -8,7 +8,7 @@ use Firesphere\SolrFluent\Extensions\FluentDocumentExtension;
 use SilverStripe\Dev\SapphireTest;
 use TractorCow\Fluent\State\FluentState;
 
-class FluetDocumentExtensionTest extends SapphireTest
+class FluentDocumentExtensionTest extends SapphireTest
 {
 
     public function testOnBeforeAddDoc()
