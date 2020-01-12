@@ -11,7 +11,7 @@ class FluentDocumentExtensionTest extends SapphireTest
 {
     public function testOnBeforeAddDoc()
     {
-        $state = FluentState::singleton()->setLocale('en_US');
+        FluentState::singleton()->setLocale('en_US');
 
         $extension = new FluentDocumentExtension();
         $field = ['name' => 'Test'];
