@@ -16,10 +16,10 @@ class FluetDocumentExtensionTest extends SapphireTest
         $state = FluentState::singleton()->setLocale('en_US');
 
         $extension = new FluentDocumentExtension();
-        $field = ['Name' => 'Test'];
+        $field = ['name' => 'Test'];
         $value = 'Test';
         $extension->onBeforeAddDoc($field, $value);
 
-        $this->assertEquals('Test_en_US', $field['Name']);
+        $this->assertEquals('Test_en_US', $field['name']);
     }
 }
