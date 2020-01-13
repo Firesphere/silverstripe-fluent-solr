@@ -30,7 +30,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     /**
      * Does the state apply to this class
      *
-     * @param $class
+     * @param string $class Class to check
      * @return bool
      * @throws ReflectionException
      */
@@ -44,7 +44,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     /**
      * Is this state applicable to this extension
      *
-     * @param string $state
+     * @param string $state State to validate
      * @return bool
      */
     public function stateIsApplicable($state): bool
@@ -57,7 +57,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     /**
      * Reset the SiteState to it's default state
      *
-     * @param string|null $state
+     * @param string|null $state Reset to default state
      * @return mixed
      */
     public function setDefaultState($state = null)
@@ -78,7 +78,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     /**
      * Activate a given state. This should only be done if the state is applicable
      *
-     * @param string $state
+     * @param string $state Activate the given state
      * @return mixed
      */
     public function activateState($state)
@@ -89,7 +89,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     /**
      * Update the Solr query to match the current State
      *
-     * @param BaseQuery $query
+     * @param BaseQuery $query Query to update
      */
     public function updateQuery(&$query)
     {
@@ -118,7 +118,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     /**
      * Update a part of the query for the get and set methods.
      *
-     * @param $query
+     * @param BaseQuery $query Query that needs updating for the given method
      * @param string $locale
      * @param string $method
      */
@@ -140,7 +140,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     /**
      * Update the field filters to localised filters
      *
-     * @param $term
+     * @param string|array $term Array of terms
      * @param string $locale
      * @param array $localisedTerms
      * @return array
