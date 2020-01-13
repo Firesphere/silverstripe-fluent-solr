@@ -29,7 +29,7 @@ class FluentSchemaExtension extends Extension
     /**
      * Add the locale fields
      *
-     * @param ArrayList|DataList $data Dataset, unused
+     * @param ArrayList|DataList $data ArrayList to which the copy should be pushed
      * @param DataObject $item Item that's going to be altered per locale
      */
     public function onAfterFieldDefinition($data, $item): void
