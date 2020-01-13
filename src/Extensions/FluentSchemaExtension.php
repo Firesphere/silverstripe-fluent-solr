@@ -26,12 +26,11 @@ use TractorCow\Fluent\Model\Locale;
  */
 class FluentSchemaExtension extends Extension
 {
-
     /**
      * Add the locale fields
      *
-     * @param ArrayList|DataList $data
-     * @param DataObject $item
+     * @param ArrayList|DataList $data Dataset, unused
+     * @param DataObject $item Item that's going to be altered per locale
      */
     public function onAfterFieldDefinition($data, $item): void
     {
