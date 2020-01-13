@@ -28,6 +28,14 @@ use TractorCow\Fluent\State\FluentState;
 class FluentSiteState extends SiteState implements SiteStateInterface
 {
     /**
+     * @var array get/set methods that needs to be called to update the query
+     */
+    private static $methods = [
+        'BoostedFields',
+        'Filter',
+        'Exclude'
+    ];
+    /**
      * Does the state apply to this class
      *
      * @param string $class Class to check
@@ -98,9 +106,9 @@ class FluentSiteState extends SiteState implements SiteStateInterface
             return;
         }
 
-        $this->updatePart($query, $locale, 'BoostedFields');
-        $this->updatePart($query, $locale, 'Filter');
-        $this->updatePart($query, $locale, 'Exclude');
+        foreach (self::$methods as $method) {
+            $this->updatePart($query, $locale, $method);
+        }
 
         $fields = [];
         foreach ($query->getFields() as $field) {
