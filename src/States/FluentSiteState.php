@@ -119,8 +119,8 @@ class FluentSiteState extends SiteState implements SiteStateInterface
      * Update a part of the query for the get and set methods.
      *
      * @param BaseQuery $query Query that needs updating for the given method
-     * @param string $locale
-     * @param string $method
+     * @param string $locale Localisation to use
+     * @param string $method Get method to call
      */
     protected function updatePart(&$query, string $locale, string $method): void
     {
@@ -141,8 +141,8 @@ class FluentSiteState extends SiteState implements SiteStateInterface
      * Update the field filters to localised filters
      *
      * @param string|array $term Array of terms
-     * @param string $locale
-     * @param array $localisedTerms
+     * @param string $locale Localisation to use
+     * @param array $localisedTerms Currently localised terms
      * @return array
      */
     private function updateTerms($term, string $locale, array $localisedTerms): array
