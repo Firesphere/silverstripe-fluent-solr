@@ -41,7 +41,7 @@ class FluentSchemaExtension extends Extension
             $isDest = strpos($item['Destination'], $locale->Locale);
             if (($isDest === 0 || $item['Destination'] === null) && $locale->Locale !== null) {
                 $copy = $item;
-                $copy['Field'] = $item['Field'] . '_' . $locale->Locale;
+                $copy['Field'] = sprintf('%s_%s', $item['Field'], $locale->Locale);
                 $data->push($copy);
             }
         }
