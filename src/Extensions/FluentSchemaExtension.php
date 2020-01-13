@@ -31,6 +31,7 @@ class FluentSchemaExtension extends Extension
      *
      * @param ArrayList|DataList $data ArrayList to which the copy should be pushed
      * @param DataObject $item Item that's going to be altered per locale
+     * @todo This needs to be worked out more properly, it's making too much assumptions
      */
     public function onAfterFieldDefinition($data, $item): void
     {
