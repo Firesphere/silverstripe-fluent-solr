@@ -13,7 +13,6 @@ use Firesphere\SolrSearch\Factories\SchemaFactory;
 use SilverStripe\Core\Extension;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataList;
-use SilverStripe\ORM\DataObject;
 use TractorCow\Fluent\Model\Locale;
 
 /**
@@ -30,20 +29,17 @@ class FluentSchemaExtension extends Extension
      * Add the locale fields
      *
      * @param ArrayList|DataList $data ArrayList to which the copy should be pushed
-     * @param DataObject $item Item that's going to be altered per locale
-     * @todo This needs to be worked out more properly, it's making too much assumptions
+     * @param array $item Item that's going to be altered per locale
      */
     public function onAfterFieldDefinition($data, $item): void
     {
-        $locales = Locale::get();
+        // A locale can be null, those need to be skipped
+        $locales = Locale::get()->exclude(['Locale' => null]);
 
         foreach ($locales as $locale) {
-            $isDest = strpos($item['Destination'], $locale->Locale);
-            if (($isDest === 0 || $item['Destination'] === null) && $locale->Locale !== null) {
-                $copy = $item;
-                $copy['Field'] = sprintf('%s_%s', $item['Field'], $locale->Locale);
-                $data->push($copy);
-            }
+            $copy = $item;
+            $copy['Field'] = sprintf('%s_%s', $item['Field'], $locale->Locale);
+            $data->push($copy);
         }
     }
 }

@@ -64,13 +64,14 @@ class FluentSiteState extends SiteState implements SiteStateInterface
 
     /**
      * Reset the SiteState to it's default state
+     * Stub method for readability
      *
      * @param string|null $state Reset to default state
      * @return mixed
      */
     public function setDefaultState($state = null)
     {
-        FluentState::singleton()->setLocale($state);
+        $this->activateState($state);
     }
 
     /**
