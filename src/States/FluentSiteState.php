@@ -103,7 +103,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
     public function updateQuery(&$query)
     {
         $locale = FluentState::singleton()->getLocale();
-        if ($locale === '') {
+        if ($locale === '' || !$locale) {
             return;
         }
 
@@ -133,9 +133,6 @@ class FluentSiteState extends SiteState implements SiteStateInterface
      */
     protected function updatePart(&$query, string $locale, string $method): void
     {
-        if (!$locale) {
-            return;
-        }
         $new = [];
         $getMethod = 'get' . $method;
         $setMethod = 'set' . $method;
