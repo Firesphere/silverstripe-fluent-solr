@@ -33,6 +33,7 @@ class FluentDocumentExtension extends Extension
     public function onBeforeAddDoc(&$field, &$value): void
     {
         $fluentState = FluentState::singleton();
+        /** @var string $locale */
         $locale = $fluentState->getLocale();
         if ($locale) {
             $field['name'] .= '_' . $locale;
