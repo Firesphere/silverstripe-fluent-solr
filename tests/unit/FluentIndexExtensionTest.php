@@ -22,7 +22,8 @@ class FluentIndexExtensionTest extends SapphireTest
 
         $extension->onBeforeInit();
 
-        $this->assertCount(Locale::get()->count(), SiteState::getStates());
+        // Add 2 for default values for the extensions
+        $this->assertCount((Locale::get()->count() + 2), SiteState::getStates());
     }
 
     public function testOnBeforeSearch()
