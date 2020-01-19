@@ -4,8 +4,10 @@
 namespace Firesphere\SolrFluent\Tests;
 
 use Firesphere\SolrFluent\States\FluentSiteState;
+use Firesphere\SolrSearch\Queries\BaseQuery;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Dev\SapphireTest;
+use TractorCow\Fluent\State\FluentState;
 
 class FluentSiteStateTest extends SapphireTest
 {
@@ -37,5 +39,17 @@ class FluentSiteStateTest extends SapphireTest
         $state = new FluentSiteState();
 
         $this->assertNull($state->setDefaultState('en_US'));
+    }
+
+    public function testUpdateQuery()
+    {
+        $query = new BaseQuery();
+        FluentState::singleton()->setLocale('');
+        $query->addTerm('Test');
+        $terms = $query->getTerms();
+        $state = new FluentSiteState();
+        $this->assertNull($state->updateQuery($query));
+
+        $this->assertEquals($terms, $query->getTerms());
     }
 }

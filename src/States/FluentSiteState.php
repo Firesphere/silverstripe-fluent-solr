@@ -154,7 +154,7 @@ class FluentSiteState extends SiteState implements SiteStateInterface
      * @param array $localisedTerms Currently localised terms
      * @return array
      */
-    private function updateTerms($term, string $locale, array $localisedTerms): array
+    protected function updateTerms($term, string $locale, array $localisedTerms): array
     {
         if (count($term['fields'])) {
             foreach ($term['fields'] as &$termField) {
