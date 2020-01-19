@@ -27,7 +27,7 @@ class FluentSchemaExtensionTest extends SapphireTest
 
         $copy = $data->first();
 
-        $this->assertEquals('en_NZ_Test', $copy['Field']);
+        $this->assertEquals('Test_en_AU', $copy['Field']);
 
         $this->assertEquals(Locale::get()->count(), $data->count());
     }
