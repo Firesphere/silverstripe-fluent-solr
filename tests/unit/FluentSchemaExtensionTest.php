@@ -11,7 +11,7 @@ use TractorCow\Fluent\Model\Locale;
 
 class FluentSchemaExtensionTest extends SapphireTest
 {
-    private static $fixture_file = '../FluentTest.yml';
+    protected static $fixture_file = '../FluentTest.yml';
 
     public function testOnAfterFieldDefinition()
     {
