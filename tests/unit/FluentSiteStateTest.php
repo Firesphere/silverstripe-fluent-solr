@@ -55,11 +55,18 @@ class FluentSiteStateTest extends SapphireTest
 
         FluentState::singleton()->setLocale('en_NZ');
 
-//        $query->addTerm('Test2', 'TestField');
+        $query->addTerm('Test2', 'TestField');
+        $query->addField('MyField');
         $state->updateQuery($query);
 
         $filters = $query->getFilter();
+        $fields = $query->getFields();
+        $terms = $query->getTerms();
 
         $this->assertArrayHasKey('TestField_en_NZ', $filters);
+
+        $this->assertEquals('MyField_en_NZ', $fields[0]);
+
+        $this->assertEquals(['TestField_en_NZ'], $terms[1]['Fields']);
     }
 }
