@@ -3,7 +3,6 @@
 
 namespace Firesphere\SolrFluent\Tests;
 
-
 use Firesphere\SolrFluent\Extensions\FluentIndexExtension;
 use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSearch\States\SiteState;

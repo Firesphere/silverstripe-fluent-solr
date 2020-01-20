@@ -3,7 +3,6 @@
 
 namespace Firesphere\SolrFluent\Tests;
 
-
 use Firesphere\SolrFluent\Extensions\FluentSchemaExtension;
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\ORM\ArrayList;
