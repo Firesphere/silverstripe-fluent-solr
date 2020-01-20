@@ -67,6 +67,6 @@ class FluentSiteStateTest extends SapphireTest
 
         $this->assertEquals('MyField_en_NZ', $fields[0]);
 
-        $this->assertEquals(['TestField_en_NZ'], $terms[1]['Fields']);
+        $this->assertEquals(['TestField_en_NZ'], $terms[1]['fields']);
     }
 }
