@@ -2,7 +2,7 @@
 /**
  * Class FluentSchemaExtension|Firesphere\SolrFluent\Extensions\FluentSchemaExtension Add Fluent schema requirements
  *
- * @package Firesphere\SolrFluent\Extensions
+ * @package Firesphere\Solr\Fluent
  * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
  * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
  */
@@ -20,7 +20,7 @@ use TractorCow\Fluent\Model\Locale;
  *
  * Update the schema with the appropriate locale fields
  *
- * @package Firesphere\SolrFluent\Extensions
+ * @package Firesphere\Solr\Fluent
  * @property SchemaFactory|FluentSchemaExtension $owner
  */
 class FluentSchemaExtension extends Extension

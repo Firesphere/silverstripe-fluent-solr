@@ -3,7 +3,7 @@
  * Class FluentSiteState|Firesphere\SolrFluent\States\FluentSiteState Set the site state for each indexing group for
  * Fluent translations
  *
- * @package Firesphere\SolrFluent\States
+ * @package Firesphere\Solr\Fluent
  * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
  * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
  */
@@ -23,7 +23,7 @@ use TractorCow\Fluent\State\FluentState;
  *
  * Manage the state of the site to apply the correct locale from Fluent to search
  *
- * @package Firesphere\SolrFluent\States
+ * @package Firesphere\Solr\Fluent
  */
 class FluentSiteState extends SiteState implements SiteStateInterface
 {

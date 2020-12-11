@@ -2,7 +2,7 @@
 /**
  * Class FluentIndexExtension|Firesphere\SolrFluent\Extensions\FluentIndexExtension Add Fluent locales to the index
  *
- * @package Firesphere\SolrFluent\Extensions
+ * @package Firesphere\Solr\Fluent
  * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
  * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
  */
@@ -21,7 +21,7 @@ use TractorCow\Fluent\State\FluentState;
  * Support for Fluent translations in the index.
  *
  *
- * @package Firesphere\SolrFluent\Extensions
+ * @package Firesphere\Solr\Fluent
  * @property BaseIndex|FluentIndexExtension $owner
  */
 class FluentIndexExtension extends Extension

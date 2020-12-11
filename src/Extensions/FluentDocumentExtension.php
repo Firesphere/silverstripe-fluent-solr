@@ -3,7 +3,7 @@
  * Class FluentDocumentExtension|Firesphere\SolrFluent\Extensions\FluentDocumentExtension Add Fluent filtering
  * to queries
  *
- * @package Firesphere\SolrFluent\Extensions
+ * @package Firesphere\Solr\Fluent
  * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
  * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
  */
@@ -19,7 +19,7 @@ use TractorCow\Fluent\State\FluentState;
  *
  * Update Documents per locale
  *
- * @package Firesphere\SolrFluent\Extensions
+ * @package Firesphere\Solr\Fluent
  * @property DocumentFactory|FluentDocumentExtension $owner
  */
 class FluentDocumentExtension extends Extension
