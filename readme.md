@@ -9,11 +9,11 @@
 
 # Solr Search fulltextsearch compatibility module
 
-[See the documentation](https://firesphere.github.io/solr-docs/11-Submodules/03-Fluent.html)
+[See the documentation](https://firesphere.github.io/solr-docs/12-Submodules/03-Fluent.html)
 
 ## Installation
 
-`composer require firesphere/fluent-solr`
+`composer require firesphere/fluent-solr-search`
 
 # Cow?
 
