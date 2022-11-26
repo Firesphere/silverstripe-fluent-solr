@@ -24,7 +24,7 @@
   ],
   "require": {
     "php": ">=7.1",
-    "firesphere/solr-search": "^1",
+    "firesphere/solr-search": ">=1",
     "tractorcow/silverstripe-fluent": "^4"
   },
   "require-dev": {
