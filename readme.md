@@ -9,6 +9,8 @@
 
 # Solr Search fulltextsearch compatibility module
 
+[GPL v3 or later](LICENSE.md)
+
 [See the documentation](https://firesphere.github.io/solr-docs/12-Submodules/03-Fluent.html)
 
 ## Installation
